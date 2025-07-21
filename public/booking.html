@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emirates - Book Flights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body class="bg-gray-100">
+       <header class="emirates-header py-4 px-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="logo.png" alt="Emirates airline logo in white text on red background" class="h-10" />
+               </div>
+            <button  id="backToDashoard" onclick="backToDashboard()" class="flex items-center justify-center w-full py-2 bg-emirates-red rounded-lg text-white">
+                    Back To Dashboard
+                </button>
+        </div>
+    </header>
+
+       <div class="bg-white py-4 shadow-sm">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center px-6">
+                <div class="flex items-center space-x-2">
+                    <div class="progress-step-active rounded-full w-8 h-8 flex items-center justify-center">1</div>
+                    <span class="hidden md:inline">Flight Search</span>
+                </div>
+                <div class="h-1 bg-gray-300 flex-grow mx-2"></div>
+                <div class="flex items-center space-x-2">
+                    <div class="progress-step-active rounded-full w-8 h-8 flex items-center justify-center border border-gray-300">2</div>
+                    <span class="hidden md:inline">Select Flight</span>
+                </div>
+                <div class="h-1 bg-gray-300 flex-grow mx-2"></div>
+                <div class="flex items-center space-x-2">
+                    <div class="progress-step-active rounded-full w-8 h-8 flex items-center justify-center border border-gray-300">3</div>
+                    <span class="hidden md:inline">Passenger Details</span>
+                </div>
+                <div class="h-1 bg-gray-300 flex-grow mx-2"></div>
+                <div class="flex items-center space-x-2">
+                    <div class="progress-step-active rounded-full w-8 h-8 flex items-center justify-center border border-gray-300">4</div>
+                    <span class="hidden md:inline">Payment</span>
+                </div>
+                <div class="h-1 bg-gray-300 flex-grow mx-2"></div>
+                <div class="flex items-center space-x-2">
+                    <div class="progress-step-active rounded-full w-8 h-8 flex items-center justify-center border border-gray-300">5</div>
+                    <span class="hidden md:inline">Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <main class="container mx-auto py-8 px-4">
+         <div id="flight-search" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6">Book Your Flight</h2>
+            
+            <div class="flex border-b mb-6">
+                <button id="round-trip-tab" class="tab-active px-4 py-2 mr-2">Round Trip</button>
+                <button id="one-way-tab" class="px-4 py-2 mr-2">One Way</button>
+                <button id="multi-city-tab" class="px-4 py-2">Multi-City</button>
+            </div>
+            
+          <form id="search-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div>
+                        <label for="origin" class="block text-sm font-medium text-gray-700 mb-1">From</label>
+                        <select id="origin" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none 
+                        focus:ring-2 focus:ring-red-500">
+                            <option value="">Select Origin</option>
+                            <option value="DXB">Dubai International (DXB)</option>
+                            <option value="AUH">Abu Dhabi International (AUH)</option>
+                            <option value="SHJ">Sharjah International (SHJ)</option>
+                            <option value="LHR">London Heathrow (LHR)</option>
+                            <option value="JFK">New York JFK (JFK)</option>
+                            <option value="CDG">Paris Charles de Gaulle (CDG)</option>
+                            <option value="HKG">Hong Kong International (HKG)</option>
+                            <option value="SIN">Singapore Changi (SIN)</option>
+                            <option value="BKK">Bangkok Suvarnabhumi (BKK)</option>
+                            <option value="DEL">Delhi Indira Gandhi (DEL)</option>
+                            <option value="BOM">Mumbai Chhatrapati Shivaji (BOM)</option>
+                            <option value="CPT">Cape Town International (CPT)</option>
+                            <option value="JNB">Johannesburg OR Tambo (JNB)</option>
+                            <option value="LOS">Lagos Murtala Muhammed (LOS)</option>
+                            <option value="NBO">Nairobi Jomo Kenyatta (NBO)</option>
+                            <option value="KWI">Kuwait International (KWI)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="destination" class="block text-sm font-medium text-gray-700 mb-1">To</label>
+                        <select id="destination" class="w-full px-3 py-2 border border-gray-300 rounded-md
+                         focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="">Select Destination</option>
+                            <option value="LHR">London Heathrow (LHR)</option>
+                            <option value="JFK">New York JFK (JFK)</option>
+                            <option value="LOS">Lagos Murtala Muhammed (LOS)</option>
+                            <option value="CDG">Paris Charles de Gaulle (CDG)</option>
+                            <option value="DXB">Dubai International (DXB)</option>
+                            <option value="AUH">Abu Dhabi International (AUH)</option>
+                            <option value="SHJ">Sharjah International (SHJ)</option>
+                            <option value="HKG">Hong Kong International (HKG)</option>
+                            <option value="SIN">Singapore Changi (SIN)</option>
+                            <option value="BKK">Bangkok Suvarnabhumi (BKK)</option>
+                            <option value="DEL">Delhi Indira Gandhi (DEL)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="departure-date" class="block text-sm font-medium text-gray-700 mb-1">Departure</label>
+                        <input type="date" id="departure-date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                    </div>
+                    
+                    <div id="return-date-container">
+                        <label for="return-date" class="block text-sm font-medium text-gray-700 mb-1">Return</label>
+                        <input type="date" id="return-date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div>
+                        <label for="cabin-class" class="block text-sm font-medium text-gray-700 mb-1">Cabin Class</label>
+                        <select id="cabin-class" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="economy">Economy</option>
+                            <option value="premium">Premium Economy</option>
+                            <option value="business">Business</option>
+                            <option value="first">First Class</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="adults" class="block text-sm font-medium text-gray-700 mb-1">Adults (12+)</label>
+                        <select id="adults" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="children" class="block text-sm font-medium text-gray-700 mb-1">Children (2-11)</label>
+                        <select id="children" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="infants" class="block text-sm font-medium text-gray-700 mb-1">Infants (Under 2)</label>
+                        <select id="infants" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button type="submit" id="search-flights" class="emirates-btn px-6 py-3 rounded-md font-medium">Search Flights</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="flight-results" class="hidden bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6">Select Your Flight</h2>
+              <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h3 class="font-bold">Outbound Flight</h3>
+                    <p id="outbound-date" class="text-gray-600">Dubai (DXB) to London (LHR) - DD/MM/YYYY</p>
+                </div>
+                <div>
+                    <button id="modify-search" class="text-emirates-red hover:underline">Modify Search</button>
+                </div>
+            </div>
+            
+            <div id="outbound-flights" class="space-y-4 mb-8">
+              </div>
+            
+            <div id="return-flight-section" class="hidden">
+                <div class="mb-6">
+                    <h3 class="font-bold">Return Flight</h3>
+                    <p id="return-date-display" class="text-gray-600">London (LHR) to Dubai (DXB) - DD/MM/YYYY</p>
+                </div>
+                
+                <div id="return-flights" class="space-y-4 mb-8">
+                   </div>
+            </div>
+            
+            <div class="flex justify-end">
+                <button id="continue-to-passengers" class="emirates-btn px-6 py-3 rounded-md font-medium hidden">Continue to Passenger Details</button>
+            </div>
+        </div>
+        
+        <div id="passenger-details" class="hidden bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6">Passenger Details</h2>
+            <div class="mb-8">
+                <h3 class="font-bold text-lg mb-4">Flight Summary</h3>
+                <div id="selected-flights-summary" class="bg-gray-50 p-4 rounded-md">
+                   </div>
+            </div>
+            
+            <form id="passenger-form">
+                <div id="passenger-forms-container">
+                  </div>
+                
+                <div class="mt-8">
+                    <h3 class="font-bold text-lg mb-4">Contact Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="contact-email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="contact-email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                        </div>
+                        <div>
+                            <label for="contact-phone" class="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
+                            <input type="tel" id="contact-phone" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="back-to-flights" class="px-6 py-3 border border-gray-300 rounded-md font-medium bg-white hover:bg-gray-50">Back to Flights</button>
+                    <button type="submit" id="continue-to-payment" class="emirates-btn px-6 py-3 rounded-md font-medium">Continue to Payment</button>
+                </div>
+            </form>
+        </div>
+        
+       <div id="payment-section" class="hidden bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6">Payment</h2>
+             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="mb-8">
+                        <h3 class="font-bold text-lg mb-4">Payment Method</h3>
+                         <div class="border border-gray-200 rounded-md overflow-hidden">
+                            <div class="border-b border-gray-200">
+                                <button class="payment-method-tab active px-4 py-3 w-full text-left" data-method="credit-card">Credit/Debit Card</button>
+                            </div>
+                            <div class="p-4">
+                                <div id="credit-card-form">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <label for="card-number" class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                                        </div>
+                                        <div>
+                                            <label for="card-name" class="block text-sm font-medium text-gray-700 mb-1">Name on Card</label>
+                                            <input type="text" id="card-name" placeholder="John Doe" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                                        <div>
+                                            <label for="expiry-month" class="block text-sm font-medium text-gray-700 mb-1">Expiry Month</label>
+                                            <select id="expiry-month" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                                                <option value="">Month</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="expiry-year" class="block text-sm font-medium text-gray-700 mb-1">Expiry Year</label>
+                                            <select id="expiry-year" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                                                <option value="">Year</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2027">2027</option>
+                                                <option value="2028">2028</option>
+                                                <option value="2029">2029</option>
+                                                <option value="2030">2030</option>
+                                                <option value="2031">2031</option>
+                                                <option value="2032">2032</option>
+                                                <option value="2033">2033</option>
+                                                <option value="2034">2034</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="cvv" class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                                            <input type="text" id="cvv" placeholder="123" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="checkbox" id="save-card" class="mr-2">
+                                        <label for="save-card" class="text-sm text-gray-700">Save this card for future payments</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="font-bold text-lg mb-4">Billing Address</h3>                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="billing-first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                <input type="text" id="billing-first-name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                            <div>
+                                <label for="billing-last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" id="billing-last-name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="billing-address" class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                            <input type="text" id="billing-address" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="billing-city" class="block text-sm font-medium text-gray-700 mb-1">City</label>
+                                <input type="text" id="billing-city" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                            <div>
+                                <label for="billing-country" class="block text-sm font-medium text-gray-700 mb-1">Country</label>
+                                <select id="billing-country" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                                    <option value="">Select Country</option>
+                                    <option value="AE">United Arab Emirates</option>
+                                    <option value="US">United States</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="FR">France</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="IN">India</option>
+                                    <option value="CN">China</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="RU">Russia</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="SE">Sweden</option>
+                                    <option value="NO">Norway</option>
+                                    <option value="DK">Denmark</option>
+                                    <option value="FI">Finland</option>
+                                    <option value="PL">Poland</option>
+                                    <option value="CH">Switzerland</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="BE">Belgium</option>
+                                    <option value="IE">Ireland</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="GR">Greece</option>
+                                    <option value="TR">Turkey</option>
+                                    <option value="NG">Nigeria</option>
+                                    <option value="KE">Kenya</option>
+                                    <option value="EG">Egypt</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="CL">Chile</option>
+                                    <option value="CO">Colombia</option>
+                                    <option value="MX">Mexico</option>
+                                    <option value="PE">Peru</option>
+                                    <option value="VE">Venezuela</option>
+                                    <option value="MY">Malaysia</option>
+                                    <option value="SG">Singapore</option>
+                                    <option value="TH">Thailand</option>                                        
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="billing-state" class="block text-sm font-medium text-gray-700 mb-1">State/Province</label>
+                                <input type="text" id="billing-state" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                            <div>
+                                <label for="billing-zip" class="block text-sm font-medium text-gray-700 mb-1">ZIP/Postal Code</label>
+                                <input type="text" id="billing-zip" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <button type="button" id="back-to-passengers" class="px-6 py-3 border border-gray-300 rounded-md font-medium bg-white hover:bg-gray-50">Back to Passengers</button>
+                        <button type="button" id="confirm-payment" class="emirates-btn px-6 py-3 rounded-md font-medium">Confirm Payment</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="border border-gray-200 rounded-md p-6 sticky top-4">
+                        <h3 class="font-bold text-lg mb-4">Booking Summary</h3>
+                        
+                        <div id="booking-summary" class="mb-6">
+                          </div>
+                        
+                        <div class="border-t border-gray-200 pt-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Subtotal</span>
+                                <span id="subtotal" class="font-medium">NGN 0.00</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700">Taxes & Fees</span>
+                                <span id="taxes" class="font-medium">NGN 0.00</span>
+                            </div>
+                            <div class="flex justify-between text-lg font-bold">
+                                <span>Total</span>
+                                <span id="total" class="text-emirates-red">NGN 0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+          <div id="confirmation-section" class="hidden bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="text-center py-12">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold mb-4">Booking Confirmed!</h2>
+                <p class="text-gray-600 mb-8 max-w-md mx-auto">Thank you for booking with Emirates. Your booking reference number is <span id="booking-reference" class="font-bold text-emirates-black">EM12345678</span>. A confirmation has been sent to your email.</p>
+                <div id="confirmation-details" class="bg-gray-50 rounded-md p-6 max-w-2xl mx-auto mb-8">
+                  </div>                
+                <div class="flex justify-center space-x-4">
+                    <button id="view-booking" class="emirates-btn px-6 py-3 rounded-md font-medium">View Booking</button>
+                    <button id="new-booking" class="px-6 py-3 border border-gray-300 rounded-md font-medium bg-white hover:bg-gray-50">Start New Booking</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Book</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white">Flights</a></li>
+                        <li><a href="www.google.com" class="text-gray-300 hover:text-white">Hotels</a></li>
+                        <li><a href="www.google.com" class="text-gray-300 hover:text-white">Cars</a></li>
+                        <li><a href="www.google.com" class="text-gray-300 hover:text-white">Packages</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Manage</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white">My Trips</a></li>
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">Check-in</a></li>
+                        <li><a href="experience.html" class="text-gray-300 hover:text-white">Flight Status</a></li>
+                        <li><a href="manage.html" class="text-gray-300 hover:text-white">Manage Booking</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Experience</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white">Our Fleet</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-white">Inflight Experience</a></li>
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">Destination Guide</a></li>
+                        <li><a href="sign up.html" class="text-gray-300 hover:text-white">Skywards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Help</h3>
+                    <ul class="space-y-2">
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">Contact Us</a></li>
+                        <li><a href="www.google.com" class="text-gray-300 hover:text-white">FAQs</a></li>
+                        <li><a href="www.google.com" class="text-gray-300 hover:text-white">Baggage</a></li>
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">Travel Requirements</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/17506130-3bcb-4513-9db2-5b87ebef696d.png" alt="Emirates airline footer logo in white text on gray background" class="h-8" />
+                </div>
+                  </div>
+        </div>
+    </footer>
+    <footer class="py-6 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300">© 2025 Joseph Abel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="booking.js"></script>
+</body>
+</html>

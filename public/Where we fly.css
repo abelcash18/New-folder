@@ -1,0 +1,30 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .map-container {
+            transition: all 0.3s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .search-container {
+            transition: all 0.3s ease;
+        }
+        
+        .search-container:focus-within {
+            box-shadow: 0 0 0 4px rgba(201, 17, 39, 0.2);
+        }
+        
+        .emirates-red {
+            background-color: #c91127;
+        }

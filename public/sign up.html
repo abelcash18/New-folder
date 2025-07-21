@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="sign up.css">
+      </head>
+    <body class="bg-light">
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="card shadow p-4 w-100" style="max-width: 600px;">
+            <div class="text-center mb-5 bg-black">
+                <img src="logo.png" alt="Emirates Logo" style="height: 60px;">
+                <p class="text-muted mb-0 text-white-50">LOYALTY</p>
+                <h3 class="mt-2 mb-0" style="color: #f5edee; font-weight: bold;">Join Emirates Skywards</h3>
+                <p class="text-white mb-0">Open up a world of Rewards every time you travel. Enjoy rewards <br> flights, upgrades, exclusive benefits and more</p>
+            </div>
+            <form>
+                 <div class="messageDiv" id="signUpMessage" style="display: none;"></div>
+                <div class="row g-3 mb-3">
+                    <div class="mb-3">
+                   <input type="email" class="form-control" id="email" placeholder="Email" required>
+                </div>
+                <hr>
+                    <div class="col-md-6 col-lg-12">
+                         <select class="form-select"   name="Title" id="title">
+                         <option value="">Title</option>
+                        <option value="Mr">MR</option>
+                      <option value="Mrs">MRS</option>
+                      <option value="Miss">MISS</option>
+                      <option value="Dr">DR</option>
+                       </select> <br>
+                        </div> 
+                     <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                    </div>
+                    <p class="text-muted">Your name must be entered in English as it appear on your passport.</p>
+                    <div class="mb-3">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+                <div class="mb-3">
+                    <input aria-placeholder="Date of Birth" type="date" class="form-control" id="dob" required>
+                </div>
+                <div>
+                 <input type="text" class="form-control" id="country" placeholder="Country/territory of residence" required>
+                 </div> <br>
+                 <div class="col-md-6 col-lg-12">
+                         <select class="form-select"   name="language" id="language">
+                      <option value="">Preferred language</option>
+                      <option value="EN">English</option>
+                      <option value="FR">French</option>
+                      <option value="CH">Chinese</option>
+                      <option value="YR">Yoruba</option>
+                      <option value="HU">Hausa</option>
+                      <option value="IG">Igbo</option>
+                      <option value="IGL">Igala</option>
+                       <option value="PT">Portuguese</option>
+                       <option value="AR">Arabic</option>
+                        <option value="ES">Spanish</option>
+                        <option value="RU">Russian</option>
+                        <option value="DE">German</option>
+                        <option value="IT">Italian</option>
+                        <option value="TR">Turkish</option>
+                        <option value="JP">Japanese</option>
+                        <option value="KO">Korean</option>
+                        <option value="NL">Dutch</option>
+                        <option value="SV">Swedish</option>
+                        <option value="NO">Norwegian</option>
+                        <option value="DA">Danish</option>
+                        <option value="FI">Finnish</option>
+                        <option value="PL">Polish</option>
+                        <option value="CS">Czech</option>
+                        <option value="HU">Hungarian</option>
+                        <option value="RO">Romanian</option>
+                        <option value="EL">Greek</option>
+                        <option value="HE">Hebrew</option>
+                        <option value="TH">Thai</option>
+                        <option value="VI">Vietnamese</option>
+                        <option value="ID">Indonesian</option>
+                        <option value="MS">Malay</option>
+                        <option value="TL">Tagalog</option>
+                        <option value="HI">Hindi</option>
+                        <option value="BN">Bengali</option>
+                        <option value="UR">Urdu</option>
+                        <option value="TA">Tamil</option>
+                        <option value="TE">Telugu</option>
+                        <option value="ML">Malayalam</option>
+                        <option value="KN">Kannada</option>
+                        <option value="GU">Gujarati</option>
+                        <option value="PA">Punjabi</option>
+                        <option value="MR">Marathi</option>
+                        <option value="BHO">Bhojpuri</option>
+                        <option value="OR">Odia</option>
+                        <option value="AS">Assamese</option>
+                        <option value="NE">Nepali</option>
+                        <option value="SI">Sinhala</option>
+                        <option value="KM">Khmer</option>
+                        <option value="MY">Burmese</option>
+                       </select> <br>
+                        </div> 
+                        <div class="col-md-6 col-lg-12">
+                           <select class="form-select"  name="code" id="code">
+                                <option value="">Country code</option>
+                                <option value="+1">+1</option>
+                                <option value="+44">+44</option>
+                                <option value="+234">+234</option>
+                                <option value="+91">+91</option>
+                                <option value="+33">+33</option>
+                                <option value="+49">+49</option>
+                                <option value="+81">+81</option>
+                                <option value="+86">+86</option>
+                               <option value="+61">+61</option>
+                                <option value="+39">+39</option>
+                                <option value="+34">+34</option>
+                                <option value="+7">+7</option>
+                                <option value="+55">+55</option>
+                                <option value="+52">+52</option>    
+                                <option value="+81">+81</option>
+                                <option value="+82">+82</option>
+                                <option value="+66">+66</option>
+                                <option value="+60">+60</option>
+                                <option value="+62">+62</option>
+                                <option value="+63">+63</option>
+                                <option value="+65">+65</option>
+                                  </select>
+                        </div> <br>
+                         <div class="mb-3">
+                            <input type="tel" class="form-control" id="mobile" placeholder="Mobile number" required>
+                        </div>
+                         <div class="mb-2">
+                            <input type="text" class="form-control" id="invite" placeholder="Enter invite code (optional)" required>
+                        </div>
+                         <div class="mb-3 text-muted">
+                            <input type="checkbox" id="check1" required>  Sign up to receive Emirates newsletters and special offer emails.
+                        You can unsubscribe at any time via the link in our emails, by updating your Emirates Skywards account
+                         preferences or by contacting us. For more details on how we use your personal information, please see our <a href="">privacy policy.</a></label>
+                        </div>
+                        <div class="mb-3 text-muted">
+                            <input type="checkbox" id="check2" required>  Sign up to receive flydubai I newsletters and special offer emails. Your name and email address will be shared with flydubai for this purpose.
+                             Unsubscribe at any time via relevant link in flydubai emails,  by updating your Emirates Skywards account
+                         preferences or by contacting Emirates or flydubai. For more details, please see flydubai's <a href="">privacy policy.</a></label>
+                        </div>
+                 <button id="signUp"type="button" class="w-100 text-center"style="background: #b10a1c; color: #fff; font-weight: bold;">Create an account 
+                 </button>
+                </div>
+                </form>
+        </div>
+    </div>
+        <footer class="py-6 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300">© 2025 Joseph Abel. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="sign up.js"></script>
+</body>
+</html>

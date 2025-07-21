@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emirates - Manage Your Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="manage.css">
+</head>
+<body>
+   <header class="emirates-gradient text-white py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a7d2b531-5cdb-49bc-a87b-4fa00b636e5d.png" alt="Emirates Airlines logo in red with gold typography and arabic calligraphy" class="h-12">
+                <h1 class="ml-4 text-xl font-bold hidden md:block">Manage Your Booking</h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="hover:text-emirates-gold">Home</a></li>
+                    <li><a href="Where we fly.html" class="hover:text-emirates-gold">My Trips</a></li>
+                    <li><a href="dashboard.html" class="hover:text-emirates-gold">Profile</a></li>
+                    <li><a href="help.html" class="hover:text-emirates-gold">Help</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-8">
+       <section class="mb-12">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-emirates-dark p-8 text-white">
+                        <h2 class="text-2xl font-bold mb-2">Welcome Back</h2>
+                        <p class="mb-6">Access your booking to make changes or check your flight details.</p>
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3d69dace-4c88-4fac-a814-c7862e9945b7.png" alt="Modern Dubai skyline with Burj Khalifa at sunset" class="rounded">
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-xl font-semibold mb-6">Sign In to Your Account</h3>
+                        <form id="loginForm">
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emirates-red" placeholder="your@email.com">
+                            </div>
+                            <div class="mb-6">
+                                <label for="password" class="block text-sm font-medium mb-1">Password</label>
+                                <input id="password" type="password" id="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emirates-red" placeholder="••••••••">
+                            </div>
+                            <button type="submit" id="loginButton" class="btn-primary w-full py-2 px-4 rounded-md font-medium mb-4">Sign In</button>
+                            <div class="messageDiv" id="signInMessage" style="display: none;"></div>
+                            <p class="text-sm text-center">
+                                <a href="Forgot  password.html" class="text-emirates-red hover:underline">Forgot password?</a> or 
+                                <a href="#booking-lookup" class="text-emirates-red hover:underline">Manage with booking reference</a>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Lookup -->
+        <section id="booking-lookup" class="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8 mb-12 hidden">
+            <h3 class="text-xl font-semibold mb-6">Find Your Booking</h3>
+            <form id="bookingForm">
+                <div class="mb-4">
+                    <label for="booking-ref" class="block text-sm font-medium mb-1">Booking Reference</label>
+                    <input type="text" id="booking-ref" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emirates-red" placeholder="6-character code">
+                </div>
+                <div class="mb-4">
+                    <label for="last-name" class="block text-sm font-medium mb-1">Last Name</label>
+                    <input type="text" id="last-name" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emirates-red" placeholder="As on booking">
+                </div>
+                <button type="submit" class="btn-primary w-full py-2 px-4 rounded-md font-medium">Find My Booking</button>
+            </form>
+        </section>
+
+       <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Quick Actions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:bg-emirates-light cursor-pointer transition">
+                    <div class="bg-emirates-red text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Upgrade Seat</h3>
+                    <p class="text-sm text-gray-600">Enhance your flight experience</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:bg-emirates-light cursor-pointer transition">
+                    <div class="bg-emirates-dark text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Special Meals</h3>
+                    <p class="text-sm text-gray-600">Select your dietary preferences</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:bg-emirates-light cursor-pointer transition">
+                    <div class="bg-emirates-red text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Print Ticket</h3>
+                    <p class="text-sm text-gray-600">Get your boarding pass</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:bg-emirates-light cursor-pointer transition">
+                    <div class="bg-emirates-dark text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Add Baggage</h3>
+
+                    <p class="text-sm text-gray-600">Increase your allowance</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Flights -->
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">My Upcoming Flights</h2>
+                <div class="flex space-x-2 border-b">
+                    <button class="px-4 py-2 tab-active">Current</button>
+                    <button class="px-4 py-2">Past</button>
+                    <button class="px-4 py-2">Cancelled</button>
+                </div>
+            </div>
+            
+            <!-- Flight Card -->
+            <div class="flight-card bg-white rounded-lg shadow-md overflow-hidden mb-4 transition">
+
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/4 bg-emirates-red text-white p-4 flex flex-col items-center justify-center">
+                        <div class="text-2xl font-bold">12</div>
+                        <div class="text-sm uppercase">June</div>
+                        <div class="text-sm mt-2">2023</div>
+                    </div>
+                    <div class="md:w-3/4 p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold">Dubai (DXB) to New York (JFK)</h3>
+                                <p class="text-sm text-gray-600">Flight EK203 • Airbus A380 • Premium Economy</p>
+                            </div>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Confirmed • Booking Ref: EK203J</span>
+                        </div>
+
+                        
+                        <div class="grid grid-cols-3 gap-4 mt-4">
+                            <div>
+                                <div class="text-sm text-gray-500">Departure</div>
+                                <div class="font-medium">08:15 AM</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm text-gray-500">Duration</div>
+                                <div class="font-medium">14h 25m</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Arrival</div>
+                                <div class="font-medium">02:40 PM</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 flex justify-between">
+
+                            <button class="text-emirates-red border border-emirates-red px-3 py-1 rounded text-sm hover:bg-emirates-red hover:text-white transition">View Details</button>
+                            <button class="btn-primary px-3 py-1 rounded text-sm">Check-in</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second Flight Card -->
+            <div class="flight-card bg-white rounded-lg shadow-md overflow-hidden mb-4 transition">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/4 bg-emirates-dark text-white p-4 flex flex-col items-center justify-center">
+                        <div class="text-2xl font-bold">28</div>
+                        <div class="text-sm uppercase">June</div>
+                        <div class="text-sm mt-2">2023</div>
+                    </div>
+
+                    <div class="md:w-3/4 p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold">New York (JFK) to Dubai (DXB)</h3>
+                                <p class="text-sm text-gray-600">Flight EK204 • Boeing 777 • Business Class</p>
+                            </div>
+                            <span class="bg-emirates-light px-2 py-1 rounded text-sm">Confirmed</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 mt-4">
+                            <div>
+                                <div class="text-sm text-gray-500">Departure</div>
+                                <div class="font-medium">10:30 PM</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm text-gray-500">Duration</div>
+
+                                <div class="font-medium">12h 55m</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Arrival</div>
+                                <div class="font-medium">07:25 PM</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 flex justify-between">
+                            <button class="text-emirates-red border border-emirates-red px-3 py-1 rounded text-sm hover:bg-emirates-red hover:text-white transition">View Details</button>
+                            <button class="text-gray-400 px-3 py-1 rounded text-sm" disabled>Check-in opens 48 hours before</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Flight Status -->
+        <section class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-bold mb-4">Track Your Flight Status</h2>
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-3/4">
+                        <p class="text-sm text-gray-600">EK203 • Dubai (DXB) to New York (JFK)</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                            <div class="bg-emirates-red h-2.5 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-sm font-medium">On Time</div>
+                        <div class="text-xs text-gray-500">Updated 10 min ago</div>
+                    </div>
+
+                </div>
+                <button class="text-emirates-red text-sm font-medium hover:underline">View Detailed Status</button>
+            </div>
+        </section>
+
+        <!-- Other Options -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">More Options</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="border-r md:pr-6">
+                        <h3 class="font-semibold mb-2 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emirates-red mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 
+
+000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+                            </svg>
+                            Skywards Points
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-4">Manage your Skywards account and explore rewards</p>
+                        <button class="text-emirates-red text-sm font-medium hover:underline">View Balance</button>
+                    </div>
+                    <div class="border-r md:pr-6">
+                        <h3 class="font-semibold mb-2 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emirates-dark mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 
+
+12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
+                            </svg>
+                            Payment Options
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-4">Add or update your payment methods</p>
+                        <button class="text-emirates-dark text-sm font-medium hover:underline">Manage Payments</button>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold mb-2 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emirates-gold mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                            </svg>
+                            Need Help?
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-4">Contact our customer service team</p>
+                        <button class="text-emirates-gold text-sm font-medium hover:underline">Get Support</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-emirates-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-6">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white">Home</a></li>
+                        <li><a href="booking.html" class="text-gray-300 hover:text-white">Book Flights</a></li>
+                        <li><a href="experience.html" class="text-gray-300 hover:text-white">Destinations</a></li>
+                        <li><a href="sign up.html" class="text-gray-300 hover:text-white">Skywards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Travel Information</h3>
+                    <ul class="space-y-2">
+
+                        <li><a href="#" class="text-gray-300 hover:text-white">Baggage</a></li>
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">Visa Requirements</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Flight Status</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Travel Updates</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">Help Center</a></li>
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">Contact Us</a></li>
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">Feedback</a></li>
+                        <li><a href="help.html" class="text-gray-300 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+
+                    <h3 class="text-lg font-semibold mb-3">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="help.html" class="text-gray-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-
+
+4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ba5930cf-b870-4333-90d4-bcf71e7cd993.png" alt="Badges for downloading Emirates mobile app from Apple App Store and Google Play" class="mt-4 cursor-pointer">
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-sm text-gray-400">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">© 2025 Joseph Abel. All rights reserved.</div>
+                    <div class="flex flex-wrap space-x-4">
+                        <a href="#" class="hover:text-white">Privacy Policy</a>
+                        <a href="#" class="hover:text-white">Terms of Use</a>
+                        <a href="#" class="hover:text-white">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script type="module" src="manage.js"></script>  
+</body>
+</html>

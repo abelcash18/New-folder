@@ -1,0 +1,16 @@
+body{
+    background-image: url(pix.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.messageDiv{
+    background-color: aqua;
+    color: black;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0.8;
+    animation: fadeOut 9s forwards;
+}

@@ -1,0 +1,55 @@
+:root {
+            --emirates-red: #D71921;
+            --emirates-black: #000000;
+            --emirates-gold: #FFD700;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .emirates-header {
+            background-color: var(--emirates-red);
+            color: white;
+        }
+        
+        .emirates-btn {
+            background-color: var(--emirates-red);
+            color: white;
+        }
+        
+        .emirates-btn:hover {
+            background-color: #c21820;
+        }
+        
+        .tab-active {
+            border-bottom: 3px solid var(--emirates-red);
+            color: var(--emirates-red);
+            font-weight: bold;
+        }
+        
+        .flight-card-selected {
+            border: 2px solid var(--emirates-red);
+            background-color: #f8f8f8;
+        }
+        
+        input:focus, select:focus {
+            border-color: var(--emirates-red);
+            outline: none;
+        }
+        
+        .progress-step-active {
+            background-color: var(--emirates-red);
+            color: white;
+        }
+        
+        .progress-step-completed {
+            background-color: var(--emirates-gold);
+            color: var(--emirates-black);
+        }
+        
+        @media (max-width: 768px) {
+            .responsive-columns {
+                flex-direction: column;
+            }
+        }

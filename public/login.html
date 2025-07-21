@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css">
+    <script type="module" src="firebaseauth"></script>
+</head>
+<body class="bg-light">
+  <div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+      <div class="text-center mb-4">
+        <img src="logo.png" alt="Emirates Logo" style="height: 60px;">
+        <h3 class="mt-2 mb-0" style="color: #b10a1c; font-weight: bold;">Emirates Airline</h3>
+        <p class="text-muted mb-0">Sign in to your account</p>
+      </div>
+      <form>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" placeholder="josephabel540@gmail.com" id="email">                                               
+            <div class="row my-3">
+                <div class="col">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" id="password">
+                </div>
+                <div class="mb-1">
+                    <input type="checkbox">
+              <label for="remember" class="form-label">Keep me logged in on this device</label>
+                </div>
+                </div>
+                <button class="mb-1 text-white bg-danger w-100" id="loginButton">Log in</button>
+                <div class="messageDiv" id="signInMessage" style="display: none;"></div>
+                <a href="Forgot .html">Forgot your email or account number?</a>
+                <a href="Forgot  password.html">Forgot/Create password</a>
+
+                <hr>
+                <p>Not an Emirates Skywards Member yet?</p>
+                <button  id="joinBtn" class="mb-1 w-100"> <a href="sign up.html">Join now</a>
+               </button>
+            </div>
+          
+
+
+
+<footer class="py-6 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300">© 2025 Joseph Abel. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="login.js"></script>
+</body>
+</html>

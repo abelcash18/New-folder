@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Emirates Fly Better</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="bg-[#d9a26a] text-black text-xs px-4 py-1 flex flex-col sm:flex-row justify-between items-center">
+        <div class="flex items-center gap-1 mb-2 sm:mb-0">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>Important: Iran temporary flights suspension</span>
+        </div>
+        <button class="text-xs underline hover:no-underline">Show more ▾</button>
+    </div>
+    <header class="text-white">
+        <div class="mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3 gap-4">
+            <div class="flex items-center gap-4">
+                <img alt="Emirates logo in white on dark red background" src="logo.png"
+                 class="w-[50px] h-[50px]" />
+                <nav class="flex gap-4 text-xs font-semibold tracking-wide uppercase">
+                    <a href="booking.html" class="hover:underline">Book</a>
+                    <a href="manage.html" class="hover:underline">Manage</a>
+                    <a href="experience.html" class="hover:underline">Experience</a>
+                    <a href="Where we fly.html" class="hover:underline">Where we fly</a>
+                    <a href="help.html" class="hover:underline">Loyalty</a>
+                    <a href="help.html" class="hover:underline">Help</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <button class="flex items-center gap-1 hover:underline">
+                    <i class="fas fa-globe"></i> NG
+                </button>
+                <button class="flex items-center gap-1 hover:underline">
+                    <i class="fas fa-search"></i> Search
+                </button>
+                <button class="flex items-center gap-1 hover:underline">
+                    <i class="fas fa-user"></i> <a href="login.html">Log in</a>
+                </button>
+            </div>
+        </div>
+        <div class="relative">
+            <img alt="Interior of airplane showing premium economy seats with brown leather and diamond stitching, window view" 
+            src="https://c.ekstatic.net/ecl/aircraft-exterior/airbus-a380/you-gov-most-recommended-brands-2025-award-hp-w1920x480.jpg?h=B161RHO9kJ-i34X_GId3lw"class="back" />
+            <div class="absolute top-8 left-6 max-w-lg text-white">
+                <p class="italic font-semibold text-sm mb-1">Stretch out in</p>
+                <h1 class="font-extrabold text-4xl leading-tight tracking-wide mb-2">PREMIUM ECONOMY</h1>
+                <p class="italic font-semibold text-sm mb-4">now on selected routes</p>
+                <button class="bg-[#c1272d] text-white text-sm font-semibold px-5 py-2 rounded hover:bg-[#a11f24] transition">Learn more</button>
+            </div>
+            <div class="absolute top-6 right-6 text-white text-xs font-semibold italic tracking-wide">FLY BETTER</div>
+        </div>
+    </header>  
+  <section class="max-w-[1200px] mx-auto px-7 sm:px-4">
+   <div class="bg-white rounded-t-md border border-b-0 border-gray-300 flex flex-col sm:flex-row text-xs font-semibold text-gray-700">
+    <button class="flex items-center gap-1 px-4 py-2 border-b-2 border-[#c1272d] text-[#c1272d]">
+     <i class="fas fa-plane">
+     </i>
+     Search flights
+    </button>
+    <button class="flex items-center gap-1 px-4 py-2 hover:bg-gray-100">
+     <i class="fas fa-tag">
+     </i>
+     Manage booking / Check in
+    </button>
+    <button class="flex items-center gap-1 px-4 py-2 hover:bg-gray-100">
+     <i class="fas fa-pen">
+     </i>
+     What's on your flight
+    </button>
+    <button class="flex items-center gap-1 px-4 py-2 hover:bg-gray-100">
+     <i class="fas fa-info-circle">
+     </i>
+     Flight status
+    </button>
+   </div>
+   <div class="bg-white border border-t-0 border-gray-300 rounded-b-md p-4 text-xs text-gray-700">
+    <div class="flex flex-col sm:flex-row gap-2 mb-4">
+     <button class="px-3 py-1 border border-gray-300 rounded text-[#c1272d] bg-[#fee7e8] font-semibold">
+      Flight
+     </button>
+     <button class="px-3 py-1 border border-gray-300 rounded hover:bg-gray-100">
+      Flight + hotel
+     </button>
+    </div>
+ <form class="flex flex-col sm:flex-row sm:items-center gap-3">
+     <div class="flex-1 relative">
+      <label class="sr-only" for="departure">
+       Departure airport
+      </label>
+      <div class="flex items-center border border-gray-300 rounded px-3 py-2">
+       <i class="fas fa-map-marker-alt text-gray-500 mr-2">
+       </i>
+       <input aria-label="Departure airport" class="w-full outline-none text-sm" id="departure" placeholder="Lagos (LOS)" type="text" value="Lagos (LOS)"/>
+       <button aria-label="Clear departure airport" class="text-gray-400 hover:text-gray-600" type="button">
+        <i class="fas fa-times">
+        </i>
+       </button>
+      </div>
+     </div>
+     <div class="flex-1">
+      <label class="sr-only" for="arrival">
+       Arrival airport
+      </label>
+      <input aria-label="Arrival airport" class="w-full border border-gray-300 rounded px-3 py-2 text-sm outline-none" id="arrival" placeholder="Arrival airport" type="text"/>
+     </div>
+     <div>
+      <a class="text-xs text-[#c1272d] underline hover:no-underline whitespace-nowrap" href="Where we fly.html">
+       Advanced search, multi-city, promo codes, partner airlines &gt;
+      </a>
+     </div>
+     <button class="bg-[#c1272d] text-white px-5 py-2 rounded text-sm font-semibold hover:bg-[#a11f24] transition whitespace-nowrap" type="submit"> <a href="Where we fly.html">Continue </a>
+      </button>
+    </form>
+   </div>
+  </section>
+   <button class="fixed top-1/2 right-0 bg-white border border-gray-300 rounded-l-md px-3
+    py-2 text-xs font-semibold text-gray-700 hover:bg-gray-100 rotate-90 origin-right select-none z-50 hidden sm:block
+    " style="writing-mode: horizontal-tb;">
+   Feedback
+  </button>
+ <div class="max-w-[1200px] mx-auto px-7 sm:px-4">
+<div class="flex items-center space-x-1 px-3 py-1 border-b border-gray-300 text-xs text-gray-600 select-none">
+    <div class="w-3 h-3 bg-red-700 rounded-sm">
+    </div>
+    <span>
+     Emirates | Fly Better
+    </span>
+   </div>
+     <nav class="flex flex-wrap border-b border-gray-300 text-xs text-gray-700 select-none overflow-x-auto">
+    <button class="flex flex-col items-center justify-center w-1/2 sm:w-24 h-20 border-r border-gray-300 bg-gray-100 hover:bg-gray-200">
+     <i class="fas fa-hotel text-lg mb-1">
+     </i>
+     <span class="leading-tight">
+      Hotels
+     </span>
+    </button>
+    <button class="flex flex-col items-center justify-center w-1/2 sm:w-24 h-20 border-r border-gray-300 hover:bg-gray-50">
+     <i class="fas fa-car text-lg mb-1">
+     </i>
+     <span class="leading-tight">
+      Car rentals
+     </span>
+     <i class="fas fa-external-link-alt text-xs ml-1">
+     </i>
+    </button>
+    <button class="flex flex-col items-center justify-center w-1/2 sm:w-24 h-20 border-r border-gray-300 hover:bg-gray-50">
+     <i class="fas fa-hiking text-lg mb-1">
+     </i>
+     <span class="leading-tight">
+      Tours &amp; activities
+     </span>
+    </button>
+    <button class="flex flex-col items-center justify-center w-1/2 sm:w-24 h-20 border-r border-gray-300 hover:bg-gray-50">
+     <i class="fas fa-umbrella-beach text-lg mb-1">
+     </i>
+     <span class="leading-tight">
+      Book a holiday
+     </span>
+   </button>
+    <button class="flex flex-col items-center justify-center w-1/2 sm:w-24 h-20 border-r border-gray-300 hover:bg-gray-50">
+     <i class="fas fa-chart-bar text-lg mb-1">
+     </i>
+     <span class="leading-tight">
+      Dubai Experience
+     </span>
+    </button>
+    <button class="flex flex-col items-center justify-center w-1/2 sm:w-24 h-20 border-r border-gray-300 hover:bg-gray-50">
+     <i class="fas fa-gas-pump text-lg mb-1">
+     </i>
+     <span class="leading-tight">
+      Chauffeur drive
+     </span>
+    </button>
+    <button class="flex flex-col items-center justify-center w-1/2 sm:w-24 h-20 border-r border-gray-300 hover:bg-gray-50">
+     <i class="fas fa-handshake text-lg mb-1">
+     </i>
+     <span class="leading-tight">
+      Meet &amp; Greet
+     </span>
+     <i class="fas fa-external-link-alt text-xs ml-1">
+     </i>
+    </button>
+    <button class="flex flex-col items-center justify-center w-1/2 sm:w-24 h-20 hover:bg-gray-50">
+     <i class="fas fa-suitcase-rolling text-lg mb-1">
+     </i>
+     <span class="leading-tight">
+      Airport transfers
+     </span>
+     <i class="fas fa-external-link-alt text-xs ml-1">
+     </i>
+    </button>
+   </nav>
+   <div class="flex flex-col sm:flex-row items-center justify-between bg-gray-800 text-white text-xs px-3 py-2">
+    <div class="flex items-center space-x-1 mb-2 sm:mb-0">
+     <img alt="Emirates Skywards coins in blue, silver, bronze colors" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/daf632b3-7a93-4f93-8f97-7d46eee081b8.jpg" 
+width="40"/>
+     <span>
+      Join Emirates Skywards
+     </span>
+     <span class="text-gray-300 text-[9px] max-w-[300px]">
+      Become an Emirates Skywards member and start enjoying flight rewards, upgrades and more
+     </span>
+    </div>
+    <button class="bg-gray-900 text-white text-xs px-3 py-1 rounded-sm hover:bg-gray-700">
+     Join now
+    </button>
+   </div>
+   <div class="flex justify-center items-center text-gray-700 text-xs py-3 select-none">
+    <span>
+     Featured destinations from
+    </span>
+    <span class="font-semibold ml-1">
+     Lagos
+    </span>
+   </div>
+   <div class="absolute top-28 right-3 text-xs text-red-700 font-semibold flex items-center space-x-1 select-none">
+    <span>
+     Best Price
+    </span>
+    <img alt="Red checkmark icon for Best Price" class="w-5 h-5" height="20" src="https://storage.googleapis.com/a1aa/image/7b656e93-7144-4238-90cd-414c023b767a.jpg" width="20"/>
+   </div>
+     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-2 sm:px-6 pb-6">
+    <div class="bg-white border border-gray-300 shadow-sm">
+     <img alt="Shenzhen city skyline at sunset with tall buildings and warm sky" class="w-full h-24 object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/ac68b8de-9498-4611-5c61-7aa78e936d56.jpg" width="400"/>
+     <div class="p-3 text-center text-xs text-gray-700 select-none">
+      <div class="uppercase text-gray-400 tracking-widest mb-1">
+       China
+      </div>
+      <div class="font-semibold mb-1">
+       Shenzhen
+      </div>
+      <div class="mb-1">
+       Book Economy Class Return until 29 Sep 23
+      </div>
+      <div class="font-bold">
+       from USD 950*
+      </div>
+     </div>
+    </div>
+    <div class="bg-white border border-gray-300 shadow-sm">
+     <img alt="Dubai bridge with city skyline at sunset with purple and pink sky" class="w-full h-24 object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/f6914cd1-2d23-4c81-5a60-08c4b6051eff.jpg" 
+width="400"/>
+     <div class="p-3 text-center text-xs text-gray-700 select-none">
+      <div class="uppercase text-gray-400 tracking-widest mb-1">
+       United Arab Emirates
+      </div>
+      <div class="font-semibold mb-1">
+       Dubai
+      </div>
+      <div class="mb-1">
+       Book Economy Class Return until 29 Sep 23
+      </div>
+      <div class="font-bold">
+       from USD 1,001*
+      </div>
+     </div>
+    </div>
+   <div class="bg-white border border-gray-300 shadow-sm">
+     <img alt="Hangzhou lighthouse on green landscape at sunset with orange sky" class="w-full h-24 object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/937eace3-
+f940-4c0c-5310-b0416559667b.jpg" width="400"/>
+     <div class="p-3 text-center text-xs text-gray-700 select-none">
+      <div class="uppercase text-gray-400 tracking-widest mb-1">
+       China
+      </div>
+      <div class="font-semibold mb-1">
+       Hangzhou
+      </div>
+      <div class="mb-1">
+       Book Economy Class Return until 29 Sep 23
+      </div>
+      <div class="font-bold">
+       from USD 1,288*
+      </div>
+     </div>
+    </div>
+    <div class="bg-white border border-gray-300 shadow-sm">
+     <img alt="Da Nang mountains and bridge with blue sky and green hills" class="w-full h-24 object-cover" height="100" src="https://
+storage.googleapis.com/a1aa/image/d5babb69-ab57-4782-8c84-ce260b3dc266.jpg" width="400"/>
+     <div class="p-3 text-center text-xs text-gray-700 select-none">
+      <div class="uppercase text-gray-400 tracking-widest mb-1">
+       Vietnam
+      </div>
+      <div class="font-semibold mb-1">
+       Da Nang
+      </div>
+     </div>
+    </div>
+    <div class="bg-white border border-gray-300 shadow-sm">
+     <img alt="Siem Reap temple ruins with lake and green trees" class="w-full h-24 object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/f83aa251-79e3-4f09-f28c-f3d62d11f85a.jpg" width="400"/>
+     <div class="p-3 text-center text-xs text-gray-700 select-none">
+      <div class="uppercase text-gray-400 tracking-
+
+widest mb-1">
+       Cambodia
+      </div>
+      <div class="font-semibold mb-1">
+       Siem Reap
+      </div>
+     </div>
+    </div>
+  <div class="bg-white border border-gray-300 shadow-sm">
+     <img alt="Dubai cityscape at night with tall buildings and lights" class="w-full h-24 object-cover" height="100" src="https://storage.googleapis.com/a1aa/image/e855a248-d5ed-48d6-98bd-8c08f977cfec.jpg" width="400"/>
+     <div class="p-3 text-center text-xs text-gray-700 select-none">
+      <div class="uppercase text-gray-400 tracking-widest mb-1">
+       United Arab Emirates
+      </div>
+      <div class="font-semibold mb-1">
+       Dubai
+      </div>
+
+     </div>
+    </div>
+   </div>
+     </div>
+        <div class="flex flex-col sm:flex-row justify-center items-center bg-gray-100 text-gray-800 text-xs sm:text-sm font-normal py-2 px-2 sm:px-6 gap-2 sm:gap-0">
+   <a class="hover:underline" href="#">
+     Explore more destinations &gt;
+    </a>
+    <button class="border border-gray-400 text-gray-900 text-xs sm:text-sm font-normal px-4 py-1 hover:bg-gray-200 transition rounded-sm">
+     See more fares
+    </button>
+    <a class="hover:underline" href="#">
+     Be inspired by our route map &gt;
+    </a>
+   </div>
+  <section class="relative mt-6">
+   <img alt="Woman in yellow dress sitting on a boat in calm blue water surrounded by tall rock formations and green trees under a blue sky" class="w-full object-cover h-48 sm:h-72 md:h-[400px]" height="400" src="https://storage.googleapis.com/a1aa/image/1433df41-cd13-48ff-5939-2cfb563ae4f8.jpg" style="height: 400px" width="1440"/>
+   <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center px-2 sm:px-4 text-center">
+    <p class="text-white text-xs sm:text-sm font-light tracking-widest mb-1 uppercase">
+     Emirates Skywards Partners
+    </p>
+    <h1 class="text-white font-serif text-2xl sm:text-3xl md:text-4xl font-bold max-w-4xl leading-tight">
+     Earn
+     <span class="font-extrabold">
+      50% bonus Skywards Miles
+     </span>
+     on flights and stays
+    </h1>
+    <p class="text-white text-xs sm:text-sm mt-2 max-w-2xl">
+     Get closer to your next reward with our airline 
+partners and Emirates Skywards Hotels.
+    </p>
+    <button class="mt-6 bg-white text-gray-900 text-xs sm:text-sm font-normal px-4 py-2 rounded-sm hover:bg-gray-200 transition">
+     Learn more
+    </button>
+   </div>
+  </section>
+  <section class="bg-gray-50 py-10 px-2 sm:px-6 text-center">
+   <p class="text-xs sm:text-sm text-gray-500 tracking-widest uppercase mb-2">
+    Flying with Emirates
+   </p>
+   <h2 class="font-serif text-gray-800 text-xl sm:text-2xl md:text-3xl font-semibold max-w-3xl mx-auto leading-snug">
+    Make it an incredible journey
+   </h2>
+   <p class="text-gray-400 text-xs sm:text-sm max-w-3xl mx-auto mt-2">
+    Explore the Emirates experience and plan an unforgettable trip beyond your flight.
+   </p>
+  </section>
+    <a aria-label="Feedback" class="fixed right-0 top-1/2 transform -translate-y-1/2 bg-gray-100 text-gray-900 text-xs sm:text-sm font-normal px-3 py-1 rounded-l-md shadow-md hover:bg-gray-200 transition z-50 block sm:hidden" href="#" style="writing-mode: vertical-rl; text-orientation: mixed;">
+   Feedback
+  </a>
+<div class="max-w-[1200px] mx-auto px-7 sm:px-4">
+   <div class="bg-white p-4 flex flex-col">
+    <p class="text-[9px] font-semibold tracking-widest text-gray-600 mb-1 uppercase">
+     Dubai Experience
+    </p>
+    <h1 class="font-merriweather text-[#1a2035] text-2xl sm:text-3xl md:text-4xl leading-tight mb-2">
+     Create your Dubai
+     <br/>
+     Experience
+    </h1>
+    <a class="text-[10px] font-semibold text-[#1a2035] hover:underline" href="#">
+     Learn more
+    </a>
+    <img alt="Dubai city skyline at sunset with Burj Khalifa and water in foreground" class="mt-4 w-full object-cover" height="250" src="https://storage.googleapis.com/a1aa/image/3ca6b359-b7be-47f8-91cb-726801bb1c09.jpg" width="600"/>
+   </div>
+     <div class="bg-white p-4 flex flex-col">
+     <p class="text-[8px] font-semibold tracking-widest text-gray-600 uppercase mb-1">
+      Cabin Features
+     </p>
+     <h2 class="text-[13px] font-semibold text-[#1a2035] mb-1">
+      First Class
+     </h2>
+     <a class="text-[9px] font-semibold text-[#1a2035] hover:underline mb-2" href="help.html">
+      Learn more
+     </a>
+     <img alt="First class meal plated with elegant food and hand pouring sauce" class="w-full object-cover flex-grow" height="120" src="https://storage.googleapis.com/a1aa/image/316e03f9-aeb3-4c44-a56e-3758a63d49cc.jpg" width="150"/>
+    </div>
+       <div class="bg-white p-4 flex flex-col">
+     <p class="text-[8px] font-semibold tracking-widest text-gray-600 uppercase mb-1">
+      Cabin Features
+     </p>
+     <h2 class="text-[13px] font-semibold text-[#1a2035] mb-1">
+      Business Class
+     </h2>
+     <a class="text-[9px] font-semibold text-[#1a2035] hover:underline mb-2" href="help.html">
+      Learn more
+     </a>
+     <img alt="Business class meal with steak and vegetables on white plate" class="w-full object-cover flex-grow" height="120" src="https://storage.googleapis.com/a1aa/image/8a4271be-9cf8-4c8a-a991-f51b8c559576.jpg" width="150"/>
+    </div>
+     <div class="bg-white p-4 flex flex-col">
+     <p class="text-[8px] font-semibold tracking-widest text-gray-600 uppercase mb-1">
+      Cabin Features
+     </p>
+     <h2 class="text-[13px] font-semibold text-[#1a2035] mb-1">
+      Premium Economy
+     </h2>
+     <a class="text-[9px] font-semibold text-[#1a2035] hover:underline mb-2" href="help.html">
+      Learn more
+     </a>
+     <img alt="Premium economy meal with salad, bread roll, and dessert on tray" class="w-full object-cover flex-grow" height="120" src="https://storage.googleapis.com/a1aa/image/726071b0-1003-4afc-84e6-7e3609176a42.jpg" width="150"/>
+    </div>
+   <div class="bg-white p-4 flex flex-col">
+     <p class="text-[8px] font-semibold tracking-widest text-gray-600 uppercase mb-1">
+      Cabin Features
+     </p>
+     <h2 class="text-[13px] font-semibold text-[#1a2035] mb-1">
+      Economy Class
+     </h2>
+     <a class="text-[9px] font-semibold text-[#1a2035] hover:underline mb-2" href="help.html">
+      Learn more
+     </a>
+     <img alt="Economy class meal with hand holding spoon over dessert bowl" class="w-full object-cover flex-grow" height="120" src="https://storage.googleapis.com/a1aa/image/10743951-cce5-4e7d-faa3-f4d69f4e3bf8.jpg" width="150"/>
+     </div>
+  </div>
+<section class="bg-white p-4 flex flex-col">
+     <p class="text-[10px] text-gray-600 max-w-xl mx-auto">
+    Learn more about our history, our business and sustainability initiatives
+   </p>
+   <h3 class=" text-center font-semibold text-[#1a2035] mb-1">
+    About us
+   </h3>
+      <div class="mt-8 flex flex-wrap justify-center gap-8 sm:gap-6">
+    <img alt="Airplane flying in blue sky with clouds" class="rounded-full object-cover w-20 h-20" height="80" src="https://storage.googleapis.com/a1aa/image/6f01706f-da68-4d75-353b-f15b2208a582.jpg" width="90"/>
+    <img alt="Mountain landscape with blue sky and clouds" class="rounded-full object-cover w-20 h-20" height="80" src="https://storage.googleapis.com/a1aa/image/529d4b2a-0ccc-4eac-a8e2-1dfa96423300.jpg" width="90"/>
+    <img alt="Group of people smiling and posing for photo" class="rounded-full object-cover w-20 h-20" height="80" src="https://storage.googleapis.com/a1aa/image/03a7cd4c-7191-4565-0eca-75ccc8f6c2a4.jpg" width="90"/>
+    <img alt="People riding horses outdoors" class="rounded-full object-cover w-20 h-20" height="80" src="https://storage.googleapis.com/a1aa/image/e3a90caa-755c-472d-6c0d-490efbea8a39.jpg" width="90"/>
+   </div>
+  </section>   
+  <div class="bg-[#f1e9e3] text-[#2f323d] text-[13px] font-normal flex flex-wrap justify-center space-x-0 sm:space-x-20 py-2 select-none gap-2 sm:gap-0">
+   <a class="hover:underline" href="help.html">
+    Our business
+   </a>
+   <a class="hover:underline" href="help.html">
+    Our planet
+   </a>
+   <a class="hover:underline" href="help.html">
+    Our people
+   </a>
+   <a class="hover:underline" href="help.html">
+    Our communities
+   </a>
+  </div>
+   <div class="flex-grow max-w-[1200px] mx-auto px-2 sm:px-6 py-10">
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-[13px] font-normal">
+    <div>
+     <h3 class="text-white font-semibold mb-2 text-[14px]">
+      About us
+     </h3>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="help.html">
+        About us
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline flex items-center gap-1" href="index.html">
+        Careers
+        <i class="fas fa-external-link-alt text-[9px]">
+        </i>
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline flex items-center gap-1" href="experience.html">
+        Media Centre
+        <i class="fas fa-external-link-alt text-[9px]">
+        </i>
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Our planet
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Our people
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Our communities
+       </a>
+      </li>
+     </ul>
+    </div>
+        <div>
+     <h3 class="text-white font-semibold mb-2 text-[14px]">
+      Help
+     </h3>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="help.html">
+        Help and Contact
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Travel Updates
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Special Assistance
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Frequently asked questions
+       </a>
+      </li>
+     </ul>
+    </div>
+   <div>
+     <h3 class="text-white font-semibold mb-2 text-[14px]">
+      Book
+     </h3>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="booking.html">
+        Book flights
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Travel services
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Transportation
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="booking.html">
+        Planning your trip
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="experience.html">
+        Dubai Experience
+       </a>
+      </li>
+     </ul>
+    </div>
+   <div>
+     <h3 class="text-white font-semibold mb-2 text-[14px]">
+      Manage
+     </h3>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="manage.html">
+        Check-in
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="manage.html">
+        Manage your booking
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Chauffeur drive
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="manage.html">
+        Flight status
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <hr class="border-t border-[#4a4e5e] my-8"/>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-8 text-[13px] font-normal">
+     <div class="md:col-span-1">
+     <h3 class="text-white font-semibold mb-2 text-[14px]">
+      Before you fly
+     </h3>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="help.html">
+        Baggage
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Visa and passport information
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Health
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Travel information
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Dubai International
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="booking.html">
+        To and from the airport
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Rules and notices
+       </a>
+      </li>
+     </ul>
+    </div>
+     <div class="md:col-span-1">
+     <h3 class="text-white font-semibold mb-2 text-[14px]">
+      Where we fly
+     </h3>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="Where we fly.html">
+        Route map
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="Where we fly.html">
+        Africa
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="Where we fly.html">
+        Asia and Pacific
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="Where we fly.html">
+        Europe
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="Where we fly.html">
+        The Americas
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="Where we fly.html">
+        The Middle East
+       </a>
+      </li>
+      <li>
+     <a class="hover:underline" href="Where we fly.html">
+        Flights to all countries/territories
+       </a>
+      </li>
+     </ul>
+    </div>
+     <div class="md:col-span-1">
+     <h3 class="text-white font-semibold mb-2 text-[14px]">
+      Experience
+     </h3>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="experience.html">
+        Cabin features
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Shop Emirates
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="dashboard.html">
+        What's on your flight
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="experience.html">
+        Inflight entertainment
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="experience.html">
+        Dining
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="experience.html">
+        Our lounges
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Dubai Stopover
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="md:col-span-1">
+     <h3 class="text-white font-semibold mb-2 text-[14px]">
+      Loyalty
+     </h3>
+     <ul class="space-y-1">
+      <li>
+       <a class="hover:underline" href="login.html">
+        Log in to Emirates Skywards
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="sign up.html">
+        Join Emirates Skywards
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Our partners
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="help.html">
+        Business Rewards benefits
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="sign up.html">
+        Register your company
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline" href="#">
+        Emirates Skywards Programme Rules
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <hr class="border-t border-[#4a4e5e] my-8"/>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-[12px] font-normal">
+      <div>
+     <h3 class="text-white font-semibold mb-2 text-[13px]">
+      Subscribe to our special offers
+     </h3>
+     <p class="mb-1">
+      Save with our latest fares and offers.
+     </p>
+     <a class="underline mb-3 inline-block text-[12px]" href="#">
+      Unsubscribe or change your preferences
+     </a>
+     <form class="flex space-x-2 mb-4 max-w-xs">
+      <input class="flex-grow px-2 py-1 text-[#2f323d] text-[13px] font-normal rounded-sm" placeholder="Email address" type="email"/>
+      <button class="bg-[#7a7a7a] text-white text-[12px] font-semibold px-3 py-1 rounded-sm hover:bg-[#5e5e5e]" type="submit">
+       Subscribe
+      </button>
+     </form>
+     <p class="text-[10px] text-[#a0a0a0] max-w-xs">
+      For details on how we use your information, please see our
+      <a class="underline" href="help.html">
+       privacy policy
+      </a>
+      .
+     </p>
+    </div>
+       <div>
+     <h3 class="text-white font-semibold mb-2 text-[13px]">
+      Emirates App
+     </h3>
+     <p class="mb-2 text-[12px]">
+      Book and manage your flights on the go.
+     </p>
+     <div class="flex flex-wrap gap-2">
+      <a aria-label="Download on the App Store" href="#">
+       <img alt="App Store button with black background and white text" class="h-10" height="40" src="https://storage.googleapis.com/a1aa/image/404b719b-efc3-49e8-4c64-9e8e5b12b291.jpg" width="120"/>
+      </a>
+      <a aria-label="Get it on Google Play" href="#">
+       <img alt="Google Play button with black background and white and green text" class="h-10" height="40" src="https://storage.googleapis.com/a1aa/image/bc0d2547-06b7-4f0e-ae8d-67bd3f15f837.jpg" width="120"/>
+      </a>
+      <a aria-label="Explore it on AppGallery" href="#">
+       <img alt="AppGallery button with pink and black background and white text" class="h-10" height="40" src="https://storage.googleapis.com/a1aa/image/15e5a56c-5189-443f-eeb4-df445f9c7d3f.jpg" width="120"/>
+      </a>
+     </div>
+    </div>
+      <div>
+     <h3 class="text-white font-semibold mb-2 text-[13px]">
+      Connect with us
+     </h3>
+     <p class="mb-2 text-[12px]">
+      Share your Emirates experience.
+     </p>
+     <div class="flex space-x-2">
+      <a aria-label="Facebook" class="bg-[#1a1a1a] hover:bg-[#333] p-2 rounded text-white text-[14px]" href="#">
+       <i class="fab fa-facebook-f">
+       </i>
+      </a>
+      <a aria-label="X" class="bg-[#1a1a1a] hover:bg-[#333] p-2 rounded text-white text-[14px]" href="#">
+       <i class="fab fa-x-twitter">
+       </i>
+      </a>
+      <a aria-label="LinkedIn" class="bg-[#1a1a1a] hover:bg-[#333] p-2 rounded text-white text-[14px]" href="#">
+       <i class="fab fa-linkedin-in">
+       </i>
+      </a>
+      <a aria-label="YouTube" class="bg-[#1a1a1a] hover:bg-[#333] p-2 rounded text-white text-[14px]" href="#">
+       <i class="fab fa-youtube">
+       </i>
+      </a>
+      <a aria-label="Instagram" class="bg-[#1a1a1a] hover:bg-[#333] p-2 rounded text-white text-[14px]" href="#">
+       <i class="fab fa-instagram">
+
+       </i>
+      </a>
+      <a aria-label="Snapchat" class="bg-[#1a1a1a] hover:bg-[#333] p-2 rounded text-white text-[14px]" href="#">
+       <i class="fab fa-snapchat-ghost">
+       </i>
+      </a>
+      <a aria-label="TikTok" class="bg-[#1a1a1a] hover:bg-[#333] p-2 rounded text-white text-[14px]" href="#">
+       <i class="fab fa-tiktok">
+       </i>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+   <footer class="py-2 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300">© 2025 Joseph Abel. All rights reserved.</p>
+        </div>
+    </footer>
+ </body>
+</html>

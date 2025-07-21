@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emirates - Where We Fly</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center">
+                    <img src="https://placehold.co/180x60" alt="Emirates Airlines logo" />
+                </a>
+                <div class="flex items-center space-x-8">
+                    <a href="#" class="text-gray-800 hover:text-emirates-red transition">Home</a>
+                    <a href="#" class="text-gray-800 hover:text-emirates-red transition">Book</a>
+                    <a href="#" class="font-bold text-emirates-red transition">Where We Fly</a>
+                    <a href="#" class="text-gray-800 hover:text-emirates-red transition">Experiences</a>
+                    <a href="#" class="text-gray-800 hover:text-emirates-red transition">Help</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="px-4 py-2 text-emirates-red border border-emirates-red rounded hover:bg-emirates-red hover:text-white transition">Login</a>
+                    <a href="#" class="px-6 py-2 bg-emirates-red text-white rounded hover:bg-red-800 transition">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative">
+        <div class="h-96 w-full overflow-hidden">
+            <img src="https://placehold.co/1920x768" alt="Emirates Airbus A380 flying over Dubai skyline at sunset" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <div class="text-center text-white px-6">
+                <h1 class="text-5xl font-bold mb-6">Discover Our Destinations</h1>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Explore 150+ destinations across 6 continents with Emirates. Your journey starts here.</p>
+                <div class="search-container bg-white p-1 rounded-full max-w-2xl mx-auto flex">
+                    <input type="text" placeholder="Search destinations..." class="flex-grow px-6 py-3 rounded-full focus:outline-none text-gray-800">
+                    <button class="bg-emirates-red text-white px-8 py-3 rounded-full hover:bg-red-800 transition">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter and Sort Controls -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold">Our Network</h2>
+                    <p class="text-gray-600">150+ destinations worldwide</p>
+                </div>
+                <div class="flex space-x-4">
+                    <select id="region-filter" class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emirates-red">
+                        <option value="all">All Regions</option>
+                        <option value="middle-east">Middle East</option>
+                        <option value="asia">Asia & Australasia</option>
+                        <option value="africa">Africa</option>
+                        <option value="europe">Europe</option>
+                        <option value="americas">Americas</option>
+                    </select>
+                    <select id="sort-by" class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emirates-red">
+                        <option value="name">Sort by: Name</option>
+                        <option value="popularity">Sort by: Popularity</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Interactive Map -->
+            <div class="mb-16 relative">
+                <div class="map-container h-96 rounded-xl overflow-hidden relative">
+                    <img src="https://placehold.co/1920x768" alt="World map with Emirates flight routes highlighted" class="w-full h-full object-cover" />
+                </div>
+                <div class="absolute top-4 right-4 bg-white p-2 rounded-lg shadow-lg">
+                    <button id="map-view-trigger" class="px-4 py-2 bg-emirates-red text-white rounded">Switch to Route View</button>
+                </div>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div id="destinations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Destination cards will be dynamically populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Destinations -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6">Seasonal Highlights</h2>
+            <p class="text-gray-600 mb-8">Discover our most popular destinations this season</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer relative h-64 group">
+                    <img src="https://placehold.co/600x400" alt="Santorini, Greece with white buildings and blue domes overlooking the Aegean Sea" class="w-full h-full object-cover"/>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent text-white">
+                        <h3 class="text-xl font-bold mb-1 group-hover:text-emirates-red transition">Santorini</h3>
+                        <p class="text-sm opacity-90">Greece</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm">From AED 1,850*</span>
+                            <button class="bg-emirates-red hover:bg-red-800 text-white px-3 py-1 rounded-full text-sm transition">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer relative h-64 group">
+                    <img src="https://placehold.co/600x400" alt="Tokyo skyline with neon lights and skyscrapers at night" class="w-full h-full object-cover"/>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent text-white">
+                        <h3 class="text-xl font-bold mb-1 group-hover:text-emirates-red transition">Tokyo</h3>
+                        <p class="text-sm opacity-90">Japan</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm">From AED 2,350*</span>
+                            <button class="bg-emirates-red hover:bg-red-800 text-white px-3 py-1 rounded-full text-sm transition">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition cursor-pointer relative h-64 group">
+                    <img src="https://placehold.co/600x400" alt="Maasai Mara National Reserve with elephants walking across vast savanna" class="w-full h-full object-cover"/>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent text-white">
+                        <h3 class="text-xl font-bold mb-1 group-hover:text-emirates-red transition">Maasai Mara</h3>
+                        <p class="text-sm opacity-90">Kenya</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm">From AED 2,150*</span>
+                            <button class="bg-emirates-red hover:bg-red-800 text-white px-3 py-1 rounded-full text-sm transition">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-emirates-red text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Never Miss A Destination</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Sign up for our newsletter and be the first to know about new routes, special offers, and destination highlights.</p>
+            <div class="flex justify-center">
+                <div class="bg-white rounded-full p-1 w-full max-w-lg flex">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-6 py-3 rounded-full focus:outline-none text-gray-800">
+                    <button class="bg-emirates-red text-white px-8 py-3 rounded-full hover:bg-red-800 transition">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://placehold.co/160x60" alt="Emirates Airlines logo" class="mb-4" />
+                    <p class="text-gray-400">Fly Better with Emirates - Connecting the world to, and through, our global hub in Dubai.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">About Emirates</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Investor Relations</a></li>
+                        <li><a href="#" class="hover:text-white transition">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Book a Flight</a></li>
+                        <li><a href="#" class="hover:text-white transition">Flight Status</a></li>
+                        <li><a href="#" class="hover:text-white transition">Baggage Information</a></li>
+                        <li><a href="#" class="hover:text-white transition">Travel Requirements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#"><img src="https://placehold.co/40x40" alt="Facebook social media icon"/></a>
+                        <a href="#"><img src="https://placehold.co/40x40" alt="Twitter social media icon"/></a>
+                        <a href="#"><img src="https://placehold.co/40x40" alt="Instagram social media icon"/></a>
+                        <a href="#"><img src="https://placehold.co/40x40" alt="YouTube social media icon"/></a>
+                    </div>
+                    <p class="text-gray-400">Download our mobile app</p>
+                    <div class="flex space-x-2 mt-2">
+                        <a href="#"><img src="https://placehold.co/120x40" alt="App Store download button"/></a>
+                        <a href="#"><img src="https://placehold.co/120x40" alt="Google Play download button"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-6 text-gray-400">
+                <p>&copy; 2025 Joseph Abel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script src="search.js"></script>
+</body>
+</html>

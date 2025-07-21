@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Email Or Account NO</title>
+    <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="bootstrap-5.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body class="bg-light">
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+            <div class="text-center mb-4">
+                <img src="logo.png" alt="Emirates Logo" style="height: 60px;">
+                <h3 class="mt-2 mb-0" style="font-weight: bold;">Forgot my membership number</h3>
+                </div>
+            <p>Fill te form below and we'll use this information to help you find your membership number.</p>
+            <form id="forgotForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter your First name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="tel" class="form-control" id="lastName" placeholder="Enter your Last name" required>
+                </div>
+                <div class="mb-3">
+                  <input type="datetime" placeholder="Date of Birth" class="form-control" id="dob" required>
+                </div>
+                <button type="submit" class="btn w-100" style="background: #b10a1c; color: #fff; font-weight: bold;">Submit</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="login.html" class="text-decoration-none" style="color: #b10a1c;">Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-6 bg-white dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-300">© 2025 Joseph Abel. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="Forgot.js"></script>
+</body>
+</html>
